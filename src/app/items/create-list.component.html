@@ -1,0 +1,37 @@
+<form (ngSubmit)="submitForm()" #slist="ngForm">
+  {{diagnostic}}
+  <div class="form-group">    
+    <input type="text" name="iname" id="iname" class="form-control" [(ngModel)]="itemsModel.name" placeholder=" " required />
+    <label for="iname">Name<sup>*</sup>: </label>
+  </div>
+  <div class="form-group">    
+    <select class="form-control" name="icategory" id="icategory" [(ngModel)]="itemsModel.category" required>
+      <option value="other">Others</option>
+      <option *ngFor="let cat of categories" [value]="cat">{{cat}}</option>
+    </select>
+    <label for="icategory">Category<sup>*</sup>: </label>
+  </div>
+  <div class="form-group">    
+    <input type="text" name="iprice" id="iprice" class="form-control" [(ngModel)]="itemsModel.price" placeholder=" " required type="number" min="1" max="1000" />
+    <label for="iprice">Price<sup>*</sup>: </label>
+  </div>
+  <div class="form-group">    
+    <input type="text" name="iqty" id="iqty" class="form-control" [(ngModel)]="itemsModel.qty"  placeholder=" " />
+    <label for="iqty">Quantity: </label>
+  </div>
+  <div class="form-group">
+    <div class="">
+      <div>
+        <label for="ipriority">Priority: </label>
+      </div>
+      <div>
+        <input type="radio" name="ipriority" id="ipriority1" class="form-control radio" [(ngModel)]="itemsModel.priority" value="Urgent" /><label>Urgent</label>
+        <input type="radio" name="ipriority" id="ipriority2" class="form-control radio" [(ngModel)]="itemsModel.priority" value="Regular" /><label>Regular</label>
+      </div>
+    </div>
+  </div>
+  <div>
+    <button type="submit" class="btn-primary" [disabled]="!slist.form.valid">Submit</button>
+    <button type="button" class="btn-secondary" (click)="cancelForm()" >Cancel</button>
+  </div>
+</form>

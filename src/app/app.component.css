@@ -1,0 +1,42 @@
+p {
+  font-family: Lato;
+}
+
+body {
+  box-sizing: border-box;
+  background-color: #C3C3C3!important;
+}
+
+.nav-list{
+  display: block;
+  position: relative;
+  top: 0;
+  width: 95vw;
+  height: 50px;
+  background-color: #fdc7e5;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  align-items: center;
+  padding: 5px;
+}
+
+.nav-list ul li{
+  display: inline;
+  width: auto;
+  list-style: none;
+  padding-right: 20%;
+  margin-right: 0.5%;
+  padding-left: 0;
+  margin-left: 0;
+  cursor: hand;
+}
+
+.nav-list ul li:last-child{
+  padding-right: 0;
+  margin-right: 0;
+}
+
+
+
+
+
